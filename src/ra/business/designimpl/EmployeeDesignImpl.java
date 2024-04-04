@@ -4,6 +4,7 @@ import ra.business.design.IDesignEmployee;
 import ra.business.entity.Employee;
 import ra.util.IOFile;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class EmployeeDesignImpl implements IDesignEmployee {
@@ -47,5 +48,10 @@ public class EmployeeDesignImpl implements IDesignEmployee {
     public int getNewId() {
       int max =  employees.stream().mapToInt(Employee::getId).max().orElse(0);
       return max+1;
+    }
+
+    @Override
+    public List<Employee> sortByName() {
+        return employees.stream().sorted(Comparator.comparing(Employee::getFullName)).toList();
     }
 }

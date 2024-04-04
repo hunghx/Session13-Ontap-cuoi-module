@@ -11,4 +11,5 @@ public interface IDesignEmployee {
     Employee findById(int id);
     void deleteById(int id);
     int getNewId();
+    List<Employee> sortByName();
 }

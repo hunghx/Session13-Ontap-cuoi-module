@@ -67,6 +67,15 @@ public class EmployeeManagement {
             list.forEach(Employee::displayData);
         }
     }
+    protected static void displayAllEmployeeSortByName(){
+        List<Employee> list = designEmployee.sortByName();
+        if (list.isEmpty()){
+            System.err.println("Ko co phan tu");
+        }else {
+            System.out.println("Danh sach nhan vien :");
+            list.forEach(Employee::displayData);
+        }
+    }
     protected static void updateEmployee(Scanner sc){
         System.out.println("Nhap id nhan vien can sua thong tin");
         int id = Integer.parseInt(sc.nextLine());
